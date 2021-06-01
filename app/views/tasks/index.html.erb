@@ -1,0 +1,12 @@
+<h1>Tasks INDEX!!!</h1>
+<h3>Tasks by title:</h3>
+<ol>
+  <% @tasks.each do |t| %>
+    <li>
+      <h3><%= link_to "#{t.title}", task_path(t) %></h3>
+      <p><%= link_to 'Delete task', delete_path(t), method: :delete, data: { confirm: "Proceed?"} %></p>
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to 'Create new', new_task_path %>
